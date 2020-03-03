@@ -1,4 +1,6 @@
 {
+  "description": "{{description}}",
+  "author": "{{author}}",
   "scripts": {
     "build": "webpack --config webpackConfigs/webpack.production.js",
     "start": "webpack-dev-server --config webpackConfigs/webpack.development.js --open"
