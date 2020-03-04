@@ -1,25 +1,24 @@
 const path = require('path')
-const htmlWebpackPlug = require('html-webpack-plugin');
+const webpack = require('webpack');
 const base = require("./webpack.base.js");
 const merge = require('webpack-merge');
-const vueloaderPlugin = require('vue-loader/lib/plugin');
+
 
 const config = merge.smart(base, {
     mode: 'development',
-    entry: "./src/main.js",
-    output: {
-        // path: path.resolve(__dirname, '../dist'),
-        filename: 'bundle.js'
+    devServer: {
+        port: 8080,
+        hot: true,
+        overlay: true,
+        compress: true,
+        open: true,
+        historyApiFallback: true
     },
 
     plugins: [
-        new htmlWebpackPlug({
-            template: './index.html',
-            filename: 'index.html'
-        }),
-        new vueloaderPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+
     ]
 })
-
-
 module.exports = config 
