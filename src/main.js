@@ -1,10 +1,16 @@
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
 import App from './App.vue'
+import ElementUI from 'element-ui';
+import router from './router'
+import store from './store'
+import '@/assets/css/index.scss'
+
+Vue.use(ElementUI);
+
 
 new Vue({
     el: '#app',
-    components: {
-        App
-    },
-    template: `<div> <app /> </div>`
+    store,
+    router,
+    render: h => h(App),
 })

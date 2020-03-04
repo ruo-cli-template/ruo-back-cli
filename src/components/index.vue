@@ -1,12 +1,16 @@
 <template>
-  <div class="first">onse</div>
+  <div class="first">
+    onse
+    <div class="two"></div>
+  </div>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+@import "./index.scss";
 .first {
   width: 100px;
   height: 100px;
